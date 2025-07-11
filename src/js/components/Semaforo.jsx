@@ -2,16 +2,7 @@ import React, { useState } from "react";
 
 export const Semaforo = ({ botones }) => {
 
-    const [activo, setActivo] = useState(0);
-
-    const timeaut = () => {
-        setTimeout(() => {
-            if (activo < botones.length - 1) {
-                setActivo(activo + 1)
-            } else { setActivo(0) }
-        }, 1000);
-    }
-
+    const [activo, setActivo] = useState(null);
 
     return (
         <div className="d-flex flex-column justify-content-center align-items-center gap-4">

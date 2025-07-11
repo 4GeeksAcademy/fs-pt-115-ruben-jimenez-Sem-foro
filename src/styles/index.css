@@ -9,3 +9,19 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+#cuerpoSemaforo {
+  border-radius: 20px;
+  width: 160px;
+  height: 380px;
+  background-color: black;
+
+}
+
+#añade{
+    background-color: purple;
+    color : black
+}
+#añade:hover {
+    background-color: rebeccapurple !important; 
+    color: white !important; 
+}

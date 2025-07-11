@@ -2,10 +2,19 @@ import React, { useState } from "react";
 
 export const Semaforo = ({ botones }) => {
 
-    const [activo, setActivo] = useState(null);
+    const [activo, setActivo] = useState(0);
+
+    const timeaut = () => {
+        setTimeout(() => {
+            if (activo < botones.length - 1) {
+                setActivo(activo + 1)
+            } else { setActivo(0) }
+        }, 1000);
+    }
+
 
     return (
-        <div className="d-flex justify-content-center align-items-center gap-2">
+        <div className="d-flex flex-column justify-content-center align-items-center gap-4">
             <div id="cuerpoSemaforo" className="d-flex flex-column justify-content-center align-items-center gap-4" >
 
                 {botones.map((botones, index) => (
@@ -22,6 +31,11 @@ export const Semaforo = ({ botones }) => {
                     ></button>
                 ))}
             </div>
+            <button id="rotar" className="btn btn-primary" onClick={()=>setTimeout(() => {
+                if (activo < botones.length - 1) {
+                    setActivo(activo + 1)
+                } else { setActivo(0) }
+                  }, 100)}>Cambia de boton</button> 
         </div >
     )
 }

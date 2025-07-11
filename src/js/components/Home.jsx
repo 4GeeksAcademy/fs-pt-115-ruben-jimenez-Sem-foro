@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 //include images into your bundle
 import { Semaforo } from "./Semaforo"
 //create your first component
@@ -15,9 +15,12 @@ const Home = () => {
 
 	const [botonesActivos, setBotonesActivos] = useState(true)
 	const resultado = botonesActivos ? botones : botonesMorados;
-
-
-
+// intento BIN BANBAN
+  useEffect(() => {
+        document.body.classList.remove("fondo-normal", "fondo-morado");
+        document.body.classList.add(botonesActivos ? "fondo-normal" : "fondo-morado");
+    }, [botonesActivos]);
+// intento BIN BANBAN 
 	return (
 		<div className="d-flex flex-column justify-content-center align-items-center min-vh-100 gap-4">
 			<Semaforo botones={resultado}></Semaforo>
